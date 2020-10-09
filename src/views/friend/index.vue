@@ -1,6 +1,6 @@
 <template>
   <div>
-    friend
+   <div v-for="item in 100" :key="item">{{item}}</div>
   </div>
 </template>
 

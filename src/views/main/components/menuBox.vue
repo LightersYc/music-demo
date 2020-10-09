@@ -1,18 +1,41 @@
 <template>
   <div class="menuBox">
-    <transition name="mask" mode="out-in">
-      <div class="mask" @click="close" v-show='show'></div>
+    <transition
+      name="mask"
+      mode="out-in"
+    >
+      <div
+        class="mask"
+        @click="close"
+        v-show='show'
+      > 46546</div>
     </transition>
-    <transition mode="out-in" name="menu">
-      <div class="menu" v-show='show'>
+    <transition
+      mode="out-in"
+      name="menu"
+    >
+      <div
+        class="menu"
+        v-show='show'
+      >
         <div class="login">
           <div>登录网易云音乐</div>
           <div class="enjoy">手机电脑多端同步，尽享海量高品质音乐</div>
-          <span class="login-box" @click="$router.push('/login')">立即登录</span>
+          <span
+            class="login-box"
+            @click="$router.push('/login')"
+          >立即登录</span>
         </div>
         <div class="flex login-icon">
-          <div class="icon-item" v-for="(item,index) in middleIcon" :key="index">
-            <i class="iconfont" :class="item.icon"></i>
+          <div
+            class="icon-item"
+            v-for="(item,index) in middleIcon"
+            :key="index"
+          >
+            <i
+              class="iconfont"
+              :class="item.icon"
+            ></i>
             <div>{{item.text}}</div>
           </div>
         </div>
@@ -27,8 +50,8 @@ export default {
   props: {
     show: {
       type: Boolean,
-      require: true,
-    },
+      require: true
+    }
   },
   data() {
     return {};
@@ -36,30 +59,30 @@ export default {
   computed: {
     middleIcon() {
       return icons.middleIcon;
-    },
+    }
   },
   created() {},
   methods: {
     close() {
       this.$emit("close", false);
-    },
-  },
+    }
+  }
 };
 </script>
 
 <style lang="scss" scoped>
 .menuBox {
   .mask {
-    width: 100%;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.7);
     position: fixed;
-    top: 0px;
-    left: 0px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
     z-index: 20;
   }
   .menu {
-    width: 80%;
+    width: 300px;
     height: 100vh;
     position: absolute;
     top: 0;
@@ -67,7 +90,7 @@ export default {
     z-index: 99;
     background-color: #fff;
     .login {
-      font-size: 12px;
+      font-size: 15px;
       text-align: center;
       color: #666;
       background-color: #efefef;

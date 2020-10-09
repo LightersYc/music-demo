@@ -2,19 +2,45 @@
   <div class="main">
     <div class="flex nav">
       <div class="nav-left">
-        <i class="iconfont icon-menu" @click="openMenu"></i>
+        <i
+          class="iconfont icon-menu"
+          @click="openMenu"
+        ></i>
       </div>
       <ul class="flex1 nav-center">
-        <router-link tag="li" class="nav-title" replace to="/my">我的</router-link>
-        <router-link tag="li" class="nav-title" replace to="/find">发现</router-link>
-        <router-link tag="li" class="nav-title" replace to="/friend">朋友</router-link>
-        <router-link tag="li" class="nav-title" replace to="/videoPage">视频</router-link>
+        <router-link
+          tag="li"
+          class="nav-title"
+          replace
+          to="/my"
+        >我的</router-link>
+        <router-link
+          tag="li"
+          class="nav-title"
+          replace
+          to="/find"
+        >发现</router-link>
+        <router-link
+          tag="li"
+          class="nav-title"
+          replace
+          to="/friend"
+        >朋友</router-link>
+        <router-link
+          tag="li"
+          class="nav-title"
+          replace
+          to="/videoPage"
+        >视频</router-link>
       </ul>
       <div class="nav-left">
         <i class="iconfont icon-search"></i>
       </div>
     </div>
-    <menuBox :show='show' @close='close' />
+    <menuBox
+      :show='show'
+      @close='close'
+    />
     <keep-alive>
       <router-view></router-view>
     </keep-alive>
@@ -22,31 +48,35 @@
 </template>
 
 <script>
+import method from "@/utils/common.js";
 export default {
   components: {
-    menuBox: () => import("./components/menuBox"),
+    menuBox: () => import("./components/menuBox")
   },
   data() {
     return {
-      show: false,
+      show: false
     };
   },
   created() {},
   methods: {
     openMenu() {
       this.show = true;
+      method.stopSlide()
     },
     close(e) {
       this.show = e;
-    },
-  },
+      method.startSlide()
+    }
+  }
 };
 </script>
 
 <style lang="scss" scoped>
 .main {
+  width: 100%;
+  height: 100%;
   .nav {
-    width: 100%;
     height: 50px;
     line-height: 50px;
     background-color: #fff;

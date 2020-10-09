@@ -2,21 +2,55 @@
   <div class="song-list">
     <div class="flex recommend new-dish">
       <div class="left">
-        <span :class="type==='dish' ? 'active' :''" @click="type = 'dish'">新碟</span>&nbsp;|&nbsp;
-        <span :class="type==='song' ? 'active' :''" @click="type = 'song'">新歌</span>
+        <span
+          :class="type==='dish' ? 'active' :''"
+          @click="type = 'dish'"
+        >新碟</span>&nbsp;|&nbsp;
+        <span
+          :class="type==='song' ? 'active' :''"
+          @click="type = 'song'"
+        >新歌</span>
       </div>
       <div class="right">
         <span v-show="type==='dish'">更多新碟</span>
         <span v-show="type==='song'">新歌推荐</span>
       </div>
     </div>
-    <div class="img-col" v-show="type==='dish'">
-      <van-loading type="spinner" color="#ff1d11" v-show='load' vertical text-size='12px'>加载中</van-loading>
-      <imgCard v-for="item in newDish" :key="item.id" :src='item.picUrl' :name='item.name' />
+    <div
+      class="img-col"
+      v-show="type==='dish'"
+    >
+      <van-loading
+        type="spinner"
+        color="#ff1d11"
+        v-show='load'
+        vertical
+        text-size='12'
+      >加载中</van-loading>
+      <imgCard
+        v-for="item in newDish"
+        :key="item.id"
+        :src='item.picUrl'
+        :name='item.name'
+      />
     </div>
-    <div class="img-col" v-show="type==='song'">
-      <van-loading type="spinner" color="#ff1d11" v-show='load' vertical text-size='12px'>加载中</van-loading>
-      <imgCard v-for="item in newSong" :key="item.id" :src='item.album.blurPicUrl' :name='item.name' />
+    <div
+      class="img-col"
+      v-show="type==='song'"
+    >
+      <van-loading
+        type="spinner"
+        color="#ff1d11"
+        v-show='load'
+        vertical
+        text-size='12'
+      >加载中</van-loading>
+      <imgCard
+        v-for="item in newSong"
+        :key="item.id"
+        :src='item.album.blurPicUrl'
+        :name='item.name'
+      />
     </div>
   </div>
 </template>
@@ -25,14 +59,14 @@
 import findApi from "@/api/find.js";
 export default {
   components: {
-    imgCard: () => import("@/components/imgCard"),
+    imgCard: () => import("@/components/imgCard")
   },
   data() {
     return {
       load: false,
       type: "dish",
       newDish: [],
-      newSong: [],
+      newSong: []
     };
   },
   created() {
@@ -53,8 +87,8 @@ export default {
       const res = await findApi.getnewSong();
       this.newSong = res.data.slice(0, 3);
       this.load = false;
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -70,7 +104,7 @@ export default {
   padding: 20px 10px;
   .recommend {
     div {
-      margin-bottom: 20px;
+      margin-bottom: 10px;
       &.left {
         font-size: 15px;
         font-weight: bold;

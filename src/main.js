@@ -9,7 +9,8 @@ Vue.use(Vant);
 
 Vue.config.productionTip = false
 
-// import '../rem'
+import 'amfe-flexible';
+
 import '@/styles/index.scss'
 import '@/styles/iconfont.css'
 

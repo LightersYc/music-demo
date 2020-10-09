@@ -1,6 +1,9 @@
 <template>
   <div class="list-item">
-    <img :src="src" alt="">
+    <img
+      :src="src"
+      alt=""
+    >
     <div class="text text-ellipsiss">{{name}}</div>
   </div>
 </template>
@@ -10,18 +13,18 @@ export default {
   props: {
     src: {
       type: String,
-      reuire: true,
+      reuire: true
     },
     name: {
       type: String,
-      reuire: true,
-    },
+      reuire: true
+    }
   },
   data() {
     return {};
   },
   created() {},
-  methods: {},
+  methods: {}
 };
 </script>
 
@@ -35,8 +38,8 @@ export default {
   }
   img {
     width: 100%;
-    height: 110px;
-    border-radius: 5px;
+    height: 100%;
+    border-radius: 10px;
   }
   .text {
     width: 100%;

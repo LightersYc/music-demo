@@ -1,6 +1,9 @@
 <template>
   <div class="loginPage">
-    <div class="login" @click="$router.push('/loginPhone')">手机号登录</div>
+    <div
+      class="login"
+      @click="$router.push('/loginPhone')"
+    >手机号登录</div>
   </div>
 </template>
 
@@ -10,7 +13,7 @@ export default {
     return {};
   },
   created() {},
-  methods: {},
+  methods: {}
 };
 </script>
 
@@ -30,6 +33,8 @@ export default {
     text-align: center;
     color: #dd001b;
     background-color: #fff;
+    font-size: 15px;
+    letter-spacing: 3px;
   }
 }
 </style>
