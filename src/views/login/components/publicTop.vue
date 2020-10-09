@@ -1,16 +1,11 @@
 <template>
-    <div class="login-box">
-        <div class="flex-start title">
-            <van-icon
-                name="arrow-left"
-                color="#333"
-                size="30"
-                @click="$router.go(-1)"
-            />
-            <slot name="title"></slot>
-        </div>
-        <slot name="content"></slot>
+  <div class="login-box">
+    <div class="flex-start title">
+      <van-icon name="arrow-left" color="#333" size="30" @click="$router.go(-1)" />
+      <div>手机号登录</div>
     </div>
+    <slot name="content"></slot>
+  </div>
 </template>
 
 <script>

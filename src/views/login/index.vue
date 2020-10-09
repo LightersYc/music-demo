@@ -1,9 +1,6 @@
 <template>
   <div class="loginPage">
-    <div
-      class="login"
-      @click="$router.push('/loginPhone')"
-    >手机号登录</div>
+    <div class="login" @click="$router.push('/loginPhone')">手机号登录</div>
   </div>
 </template>
 
@@ -13,7 +10,7 @@ export default {
     return {};
   },
   created() {},
-  methods: {}
+  methods: {},
 };
 </script>
 

@@ -41,6 +41,11 @@ const routes = [
     path: "/loginPhone",
     name: 'loginPhone',
     component: () => import('@/views/login/components/loginPhone')
+  },
+  {
+    path: "/loginPwd",
+    name: 'loginPwd',
+    component: () => import('@/views/login/components/loginPwd')
   }
 ]
 
